@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YourTrip - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#004080">
+
+</head>
+<body>
+  <h1>Welcome to YourTrip</h1>
+  <div class="content-box">
+    <h2>Login History</h2>
+    <ul id="historyList"></ul>
+  </div>
+
+  <script>
+    async function loadHistory() {
+      const userId = localStorage.getItem("userId");
+      if (!userId) {
+        document.getElementById("historyList").innerHTML = "<li>Please login first</li>";
+        return;
+      }
+
+      try {
+        const res = await fetch(`http://localhost:5000/auth/history/${userId}`);
+        const history = await res.json();
+
+        const list = document.getElementById("historyList");
+        list.innerHTML = "";
+        history.forEach(h => {
+          const li = document.createElement("li");
+          li.textContent = `Login at: ${new Date(h.loginTime).toLocaleString()}`;
+          list.appendChild(li);
+        });
+      } catch (err) {
+        document.getElementById("historyList").innerHTML = "<li>Error loading history</li>";
+        console.error(err);
+      }
+    }
+
+    loadHistory();
+  </script>
+   <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+      .then(() => console.log("Service Worker registered"))
+      .catch(err => console.error("SW registration failed:", err));
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YourTrip - Ayodhya Booking</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background: #f4f7fb;
+      color: #333;
+    }
+
+    header {
+      background: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Navigation bar */
+    nav {
+      background: #003366;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    nav button {
+      background: #004080;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s ease;
+    }
+
+    nav button:hover {
+      background: #0066cc;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #d35400, #e67e22); /* saffron gradient for Ayodhya */
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .content {
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .booking-card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .booking-card h2 {
+      margin-top: 0;
+      color: #004080;
+      font-size: 1.5em;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .booking-card button {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+
+    .booking-card button:hover {
+      background: #e65c00;
+    }
+
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    YourTrip Booking Center - Ayodhya
+  </header>
+
+  <!-- Back to Home button -->
+  <nav>
+    <button onclick="window.location.href='tourism.html'">Back to Home</button>
+  </nav>
+
+  <div class="hero">
+    Book Your Spiritual Journey to Ayodhya
+  </div>
+
+  <div class="content">
+    <div class="booking-card">
+      <h2>Ayodhya Temple Visit</h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="destination">Destination</label>
+          <select id="destination" required>
+            <option value="">Select Destination</option>
+            <option value="ayodhya">Ayodhya - Birthplace of Lord Rama</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="checkin">Check-In Date</label>
+          <input type="date" id="checkin" required>
+        </div>
+
+        <div class="form-group">
+          <label for="checkout">Check-Out Date</label>
+          <input type="date" id="checkout" required>
+        </div>
+
+        <div class="form-group">
+          <label for="adults">Adults</label>
+          <input type="number" id="adults" min="1" value="1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="children">Children</label>
+          <input type="number" id="children" min="0" value="0">
+        </div>
+
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+  </div>
+ <div class="image-box" id="imageBox"> 
+ <img src="https://img.freepik.com/free-vector/scan-me-qr-code_78370-9714.jpg?semt=ais_hybrid&w=740&q=80"
+      alt="Ayodhya Ram Mandir">
+  </div> 
+</div>
+
+  <footer>
+    © 2026 YourTrip Tourism | All Rights Reserved
+  </footer>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const destination = document.getElementById("destination").value;
+      const checkin = document.getElementById("checkin").value;
+      const checkout = document.getElementById("checkout").value;
+      const adults = document.getElementById("adults").value;
+      const children = document.getElementById("children").value;
+
+      alert(`Booking Confirmed!\nDestination: ${destination}\nCheck-In: ${checkin}\nCheck-Out: ${checkout}\nAdults: ${adults}\nChildren: ${children}`);
+    });
+  </script>
+</body>
+</html>

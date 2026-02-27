@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YourTrip - Signup</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* Background image */
+      background-image: url('https://images.deccanchronicle.com/dc-Cover-e8ocjq58f6pa9mp66640cphl81-20170312073652.Medi.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      width: 320px;
+      text-align: center;
+      backdrop-filter: blur(6px);
+
+      /* Floating animation */
+      animation: fadeInUp 1s ease-out;
+    }
+
+    /* Keyframes for fade-in + slide-up */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #004080;
+      font-size: 1.6em;
+      font-weight: bold;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .login-box input:focus {
+      border-color: #0066cc;
+      box-shadow: 0 0 8px rgba(0,102,204,0.4);
+      outline: none;
+    }
+
+    .login-box button {
+      background: #004080;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      width: 100%;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .login-box button:hover {
+      background: #0066cc;
+      transform: scale(1.05); /* subtle zoom on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Signup</h2>
+    <form id="signupForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Signup</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      const res = await fetch("http://localhost:5000/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        alert("Signup successful! Please login.");
+        window.location.href = "login.html";
+      } else {
+        alert(data.message);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YourTrip - Tourism</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  color: #333;
+
+  /* Background image */
+  background-image: url('https://greggvanourek.com/wp-content/uploads/2023/08/Nature-path-by-water-trees-and-mountains-AdobeStock_291242770-scaled.jpeg'); /* replace with your preferred image */
+  background-size: cover;       /* cover entire screen */
+  background-position: center;  /* center the image */
+  background-repeat: no-repeat; /* no tiling */
+}
+
+    }
+
+    header {
+      background: #004080; /* deep professional blue */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .hero {
+      background: linear-gradient(to right, #0066cc, #0099ff);
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .content {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .tour-card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin: 20px 0;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: center;
+    }
+
+    .tour-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.2);
+    }
+
+    .tour-card h3 {
+      margin-top: 0;
+      color: #004080;
+      font-size: 1.5em;
+    }
+
+    .tour-card img {
+      width: 40%;
+      display: block;
+      margin: 0 auto 15px;
+      border-radius: 8px;
+    }
+
+    .tour-card p {
+      font-size: 1em;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .tour-card button {
+      background: #ff6600; /* vibrant orange for CTA */
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .tour-card button:hover {
+      background: #e65c00;
+    }
+
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    YourTrip Tourism
+  </header>
+
+  <div class="hero">
+    Explore the Beauty of Nature
+  </div>
+
+  <div class="content">
+    <div class="tour-card">
+      <h3>Tirupati</h3>
+      <img src="https://tirupatibalajitravels.co.in/wp-content/uploads/2024/02/special-entry-darshan-1.webp" 
+           alt="Tirupati Temple">
+      <p>Tirupati is special due to the Tirumala Venkateswara Temple, one of the world's richest and most visited pilgrimage sites, housing Lord Venkateswara (an avatar of Vishnu) on the sacred "Seven Hills" (Tirumala).</p>
+      <button onclick="window.location.href='booking.html?place=tirupati'">Book Now</button>
+    </div>
+
+    <div class="tour-card">
+      <h3>Arunachalam</h3>
+      <img src="https://holaciti.com/assets/Articles/1750757213_qcDqTnW2fL.webp" 
+           alt="Arunachalam Hill">
+      <p>Arunachala (or Arunachalam) is a sacred hill in Tiruvannamalai, Tamil Nadu, revered as a physical manifestation of Lord Shiva and the Agni (fire) element.</p>
+      <button onclick="window.location.href='booking-arunachalam.html'">Book Now</button>
+    </div>
+  </div>
+
+    <div class="tour-card"> 
+      <h3>Varanasi</h3> 
+      <img src="https://cdn.getyourguide.com/img/location/6023dbcb71489.jpeg/99.jpg" 
+           alt="Varanasi Ghat"> 
+      <p>Varanasi, one of the oldest living cities in the world, is revered as the spiritual capital of India. Famous for its ghats along the Ganges River, it is a center of Hindu devotion, rituals, and cultural heritage.</p> 
+      <button onclick="window.location.href='booking-varanasi.html'">Book Now</button> 
+    </div> 
+  </div>
+  
+  <div class="tour-card"> 
+      <h3>Kedarnath</h3> 
+      <img src="https://cdn.citymapia.com/assets/business/2667/portfolio/15132/2667_636990432236955642.jpg?rendered=true" 
+           alt="Kedarnath"> 
+      <p>Kedarnath is a town and Nagar Panchayat in Rudraprayag district of Uttarakhand, India, known primarily for the Kedarnath Temple. It is approximately 86.5 kilometres from Rudraprayag, the district headquarters. Kedarnath is the most remote of the four Chota Char Dham pilgrimage sites. It is located in the Himalayas, about 3,583 m (11,755 ft) above sea level near the Chorabari Glacier, which is the source of the Mandakini River. </p> 
+      <button onclick="window.location.href='booking-kedarnath.html'">Book Now</button> 
+    </div> 
+  </div>
+   
+   <div class="tour-card"> 
+      <h3>Ayodhya</h3> 
+      <img src="https://www.fairobserver.com/wp-content/uploads/2025/03/Ram-Mandir.jpg" 
+           alt="Ayodhya"> 
+      <p>The legendary city of Ayodhya, popularly identified as the present-day Ayodhya, is identified in the epic Ramayana and its many versions as the birthplace of the Hindu deity Rama of Kosala and is hence regarded as the first of the seven most important pilgrimage sites for Hindus.[12][17] The Ayodhya dispute was centred on the Babri mosque, built 1528–29 under the Mughal emperor Babur and said to have been built on top of a Hindu temple that stood at the birth spot of Rama. </p> 
+      <button onclick="window.location.href='booking-ayodhya.html'">Book Now</button> 
+    </div> 
+  </div>
+
+  <footer>
+    © 2026 YourTrip Tourism | All Rights Reserved
+  </footer>
+</body>
+</html>
